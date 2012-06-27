@@ -3,18 +3,13 @@ import socket
 
 from datetime import datetime
 
-host = "irc.freenode.org"
-port = 6667
-chan = "#udacity,##udacity-cs253"
-name = "py-are-see"
-ident = "py-are-see"
-realname = "py-are-see"
+from src import settings
 
 s = socket.socket()
-s.connect((host, port))
-s.send("NICK %s\r\n" % name)
-s.send("USER %s %s bla :%s\r\n" % (ident, host, realname))
-s.send("JOIN :%s\r\n" % chan)
+s.connect((settings.host, settings.port))
+s.send("NICK %s\r\n" % settings.name)
+s.send("USER %s %s bla :%s\r\n" % (settings.ident, settings.host, settings.realname))
+s.send("JOIN :%s\r\n" % settings.chan)
 
 readbuffer = ""
 while True:
