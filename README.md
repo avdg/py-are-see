@@ -9,7 +9,7 @@ Current used version of twisted: 12.1.0
 
 # Installing
 
-The `easy_install` way: `easy_install twisted`
-The `pip` way: `pip install twisted`
+* The `easy_install` way: `easy_install twisted`
+* The `pip` way: `pip install twisted`
 
 (note: if you don't know, pick the `easy_install` method)
