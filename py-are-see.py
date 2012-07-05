@@ -3,13 +3,13 @@ import socket
 
 from datetime import datetime
 
-from src import settings
+from src.settings import settings
 
 s = socket.socket()
-s.connect((settings.host, settings.port))
-s.send("NICK %s\r\n" % settings.name)
-s.send("USER %s %s bla :%s\r\n" % (settings.ident, settings.host, settings.realname))
-s.send("JOIN :%s\r\n" % settings.chan)
+s.connect((settings["host"], settings["port"]))
+s.send("NICK %s\r\n" % settings["name"])
+s.send("USER %s %s bla :%s\r\n" % (settings["ident"], settings["host"], settings["realname"]))
+s.send("JOIN :%s\r\n" % settings["chan"])
 
 readbuffer = ""
 while True:
